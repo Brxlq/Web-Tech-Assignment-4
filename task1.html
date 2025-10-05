@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Three Boxes</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 16px;
+        }
+        .box {
+            flex: 1 1 0;
+            min-width: 0;
+            background: #4a90e2;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s;
+        }
+
+        /* Desktop: 3 in a row */
+        .box {
+            flex: 1 1 30%;
+        }
+
+        /* Tablet: 2 in a row */
+        @media (max-width: 900px) {
+            .box {
+                flex: 1 1 45%;
+            }
+        }
+
+        /* Mobile: stacked */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .box {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+</body>
+</html>
